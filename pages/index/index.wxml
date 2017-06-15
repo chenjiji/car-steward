@@ -1,10 +1,10 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+  <!-- map.wxml -->
+  <map id="myMap" show-location markers="{{mapMarkets}}" />
+
+  <button type="primary" bindtap="getCenterLocation">获取位置</button>
+  <button type="primary" bindtap="moveToLocation">移动位置</button>
+  <button type="primary" bindtap="translateMarker">移动标注</button>
+  <button type="primary" bindtap="includePoints">缩放视野展示所有经纬度</button>
 </view>
