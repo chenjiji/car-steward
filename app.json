@@ -1,12 +1,47 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+  "pages": [
+    "pages/safe/index",
+    "pages/check/index",
+    "pages/help/index",
+    "pages/vip/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "navigationBarBackgroundColor": "#f90",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "易车途",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "backgroundColor": "#f90",
+    "color": "#e6e6e6",
+    "selectedColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/safe/index",
+        "text": "易出行",
+        "iconPath": "assets/icons/safe.png",
+        "selectedIconPath": "assets/icons/safe1.png"
+      },
+      {
+        "pagePath": "pages/check/index",
+        "text": "易车检",
+        "iconPath": "assets/icons/check.png",
+        "selectedIconPath": "assets/icons/check1.png"
+      },
+      {
+        "pagePath": "pages/help/index",
+        "text": "易帮助",
+        "iconPath": "assets/icons/help.png",
+        "selectedIconPath": "assets/icons/help1.png"
+      },
+      {
+        "pagePath": "pages/vip/index",
+        "text": "易VIP",
+        "iconPath": "assets/icons/vip.png",
+        "selectedIconPath": "assets/icons/vip1.png"
+      }
+    ]
   }
 }

@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="operation-panel"></view>
+  <view class="list-panel">
+    <scroll-view style="height: 400rpx;;" scroll-y="true">
+      <view class="item-panel"></view>
+    </scroll-view>
+  </view>
+</view>
