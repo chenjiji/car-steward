@@ -1,0 +1,7 @@
+<template name="star">
+  <view class="star-panel">
+    <image wx:for="{{entireStar}}" wx:key="index" src="../../assets/icons/star2.png" class="star"></image>
+    <image wx:for="{{halfStar}}" wx:key="index" src="../../assets/icons/star1.png" class="star"></image>
+    <image wx:for="{{emptyStar}}" wx:key="index" src="../../assets/icons/star0.png" class="star"></image>
+  </view>
+</template>

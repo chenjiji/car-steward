@@ -1,66 +1,37 @@
-// pages/help/index.js
+const helpService = require('../../services/helpService')
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    tabList: [
+      { text: '全部', active: true, type: '0' },
+      { text: '加油', active: false, type: '1' },
+      { text: '加水', active: false, type: '2' },
+      { text: '补胎', active: false, type: '3' },
+      { text: '故障', active: false, type: '4' }
+    ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
+    let shopList = helpService.getShopList('0')
+    shopList.forEach(item => {
+      let entireStar = Math.floor(item.score)
+      let halfStar = item.score - entireStar
+      let emptyStar = 5 - Math.ceil(item.score)
+      item.starInfo = {
+        entireStar: entireStar,
+        halfStar: halfStar,
+        emptyStar: emptyStar
+      }
+    })
+    this.setData({
+      shopList: shopList
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  changeType: function (event) {
+    this.data.tabList.forEach(item => {
+      item.active = event.target.id == item.type
+    })
+    this.setData({
+      tabList: this.data.tabList
+    })
   }
 })

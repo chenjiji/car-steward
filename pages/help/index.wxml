@@ -1,8 +1,27 @@
-<view class="container">
-  <view class="operation-panel"></view>
+<import src="../../components/common/star.wxml" />
+<scroll-view class="full" scroll-y>
   <view class="list-panel">
-    <scroll-view style="height: 400rpx;;" scroll-y="true">
-      <view class="item-panel"></view>
-    </scroll-view>
+    <view class="item-panel" wx:for="{{shopList}}" wx:key="id">
+      <view class="img-box shop-logo">
+        <image src="{{item.logoPath}}"></image>
+      </view>
+      <view class="shop-info">
+        <text class="shop-name">{{item.name}}</text>
+        <text class="shop-address">{{item.address}}</text>
+        <view class="comment-panel">
+          <template is="star" data="{{...item.starInfo}}" />
+          <text>{{item.comments}}人评价</text>
+        </view>
+        <view class="service-panel">
+          <view class="help-panel">
+            <view wx:for="{{item.serviceArea}}" wx:key="index" wx:for-item="type" class="help-icon type{{type}}"></view>
+          </view>
+          <text>16.7km</text>
+        </view>
+      </view>
+    </view>
   </view>
-</view>
+</scroll-view>
+<scroll-view scroll-x class="operation-panel">
+  <view class="operation-item {{item.active ? 'active' : ''}}" wx:for="{{tabList}}" wx:key="type" id="{{item.type}}" bindtap="changeType">{{item.text}}</view>
+</scroll-view>

@@ -1,0 +1,12 @@
+.star-panel {
+  display: flex;
+  width: 160rpx;
+  height: 36rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.star {
+  width: 28rpx;
+  height: 28rpx;
+}
